@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Component Example</title>
+    <!-- React and Babel CDN links -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        
+         // IN HTML ONCLICK EVENT WAS LIKE THIS :
+         // onclick = " helloUser = ('argument') "
+         // IN JSX ONCLICK IS LIKE THIS :
+         // onClick = { handleClick }
+        /*  IF WE WANT TO PASS AN ARGUMENT TO THE BELLOW FUNCTION WE WILL ENVOKE IT,
+            IN ORDER TO PREVENT ENVOKING BUTTON WITHOUT CLICKING ON IT,
+            WE MAKE ANOTHER ARROW FUNCTION INSIDE THE ONCLICK EVENT TO WRAP THE BUTTON'S FUNCTION INSIDE IT. */
+
+         // HANDLECLICK IS MY BUTTON'S FUNCTION
+        const handleClick = (name) => { console.log( 'hi ' + name ); }
+
+
+        // Define a functional component
+        const Home = () => { return <button onClick={ () => handleClick( 'Marie' ) }> Tap </button>; };
+
+
+        // Main App component that includes the HelloUser component
+        const App = () => {
+            return (
+                <div>
+                    <Home />
+                </div>
+            );
+        };
+
+        // Render the App component to the root div
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

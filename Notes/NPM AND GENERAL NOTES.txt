@@ -1,0 +1,30 @@
+[pnpm is up to 2x faster than npm]
+>>npm install -g pnpm
+
+[To create next.js app]
+>>npx create-next-app@latest prohect-name --use-pnpm
+
+[To use Vite instead of 'create-react-app']
+>>npm create vite@latest
+>>cd {project-name}
+>>npm install
+>>npm run dev
+
+[To use Tailwind in react]
+>>cd {project-name}
+>>npm install tailwindcss @tailwindcss/vite
+
+Add the @tailwindcss/vite plugin to your Vite configuration.
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [tailwindcss(), react()],
+})
+
+Create a src/index.css file and add the following lines:
+
+@import "tailwindcss";
