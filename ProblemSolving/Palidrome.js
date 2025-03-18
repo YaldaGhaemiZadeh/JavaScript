@@ -29,11 +29,26 @@ readline.question( '\nEnter a palidrome wrord or string: ', (answer) =>{
     
     //* reversed array
     let reverseAnswer = NoSpaceChar.reverse()
-    console.log(`Reversed Array: ${reverseAnswer}\n`)
+    console.log(`Reversed Array: ${reverseAnswer}`)
     
-    //todo: check if it's palidrome
-    
+    //i wanted to use two pointer tecnique but i didn't remember
+    //* with AI's help 
+    let start = 0
+    let end = NoSpaceChar.length - 1
+    let palidrome = true
 
-    //! rAcEcAr AnD cArRacE
+    while( start < end ){
+        if(NoSpaceChar[start] !== NoSpaceChar[end]){
+            palidrome = false
+        break
+    }
+    start++
+    end--
+}
+    
+    if(palidrome){ console.log(`Your input answer is a palidrome.\n`) }
+    else { console.log(`Your input answer is not a palidrome.\n`) }
+
+    //! rAcEcAr / mADAm
     readline.close()
 })
